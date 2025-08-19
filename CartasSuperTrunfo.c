@@ -1,32 +1,33 @@
 #include <stdio.h>
+#include <stdlib.h>
 
-// Desafio Cadastro das Cartas no Super Trunfo - Nível NOVATO
+// Desafio Cadastro das Cartas no Super Trunfo - Nível AVENTUREIRO
 
 int main() {
     
     //Variáveis carta 1:
 
     char estado1='a';
-    char codigodacarta1[3]="";
-    char cidade1[20]="";
+    char codigodacarta1[20]="aaa";
+    char cidade1[20]="aaa";
     int populacao1=0;
-    float area1;
-    float pib1;
+    float area1=0.0;
+    float pib1=0.0;
     int pontosturisticos1=0;
-    float denpop1;
-    float pibpercapita1;
+    float denpop1=0.0;
+    float pibpercapita1=0.0;
 
     //Variáveis carta 2:
 
     char estado2='a';
-    char codigodacarta2[3]="";
-    char cidade2[20]="";
+    char codigodacarta2[20]="aaa";
+    char cidade2[20]="aaa";
     int populacao2=0;
-    float area2;
-    float pib2;
+    float area2=0.0;
+    float pib2=0.0;
     int pontosturisticos2=0;
-    float denpop2;
-    float pibpercapita2;
+    float denpop2=0.0;
+    float pibpercapita2=0.0;
 
     //Apresentação do Jogo:
 
@@ -35,63 +36,63 @@ int main() {
 
     //Cadastro Carta 1:
 
-    printf ("Cadastro Carta 1\n\n");
+    printf ("Cadastro Carta 1:\n\n");
 
-    printf ("Escolha um Estado para jogar: \n");
-    printf ("A - Paraná\nB - Bahia\n");
+    printf ("Escolha um Estado para jogar: ");
+    printf ("A - Parana B - Bahia\n");
     scanf ("%c", &estado1);
 
-    printf ("\nInsira o Código da Carta: ");
+    printf ("\nInsira o Codigo da Carta: ");
     scanf ("%s", &codigodacarta1);
 
     printf ("Insira a Cidade: ");
     scanf ("%s", &cidade1);
 
-    printf ("Insira a População: ");
+    printf ("Insira a Populacao: ");
     scanf ("%d", &populacao1);
 
-    printf ("Insira a Área em Km2: ");
+    printf ("Insira a Area em Km2: ");
     scanf ("%f", &area1);
 
     printf ("Insira o PIB: ");
     scanf ("%f", &pib1);
 
-    printf ("Insira a quantidade de Pontos Turísticos: ");
+    printf ("Insira a quantidade de Pontos Turisticos: ");
     scanf ("%d", &pontosturisticos1);
 
     //Cadastro Carta 2:
 
     printf ("\nCadastro Carta 2\n\n");
 
-    printf ("Escolha um Estado para jogar: \n");
-    printf ("A - Paraná\nB - Bahia ");
-    scanf ("%c", &estado2);
+    printf ("Escolha um Estado para jogar: ");
+    printf ("A - Parana B - Bahia\n");
+    scanf (" %c", &estado2);
 
-    printf ("\nInsira o Código da Carta: ");
+    printf ("\nInsira o Codigo da Carta: ");
     scanf ("%s", &codigodacarta2);
 
     printf ("Insira a Cidade: ");
     scanf ("%s", &cidade2);
 
-    printf ("Insira a População: ");
+    printf ("Insira a Populacao: ");
     scanf ("%d", &populacao2);
 
-    printf ("Insira a Área em Km2: ");
+    printf ("Insira a Area em Km2: ");
     scanf ("%f", &area2);
 
     printf ("Insira o PIB: ");
     scanf ("%f", &pib2);
 
-    printf ("Insira a quantidade de Pontos Turísticos: ");
+    printf ("Insira a quantidade de Pontos Turisticos: ");
     scanf ("%d", &pontosturisticos2);
 
         //Calculos da Densidade Populacional e Pib Per Capita:
 
-        denpop1=populacao1/area1;
-        pibpercapita1=pib1/populacao1;
+        denpop1=(float)populacao1/area1;
+        pibpercapita1=pib1/(float)populacao1;
 
-        denpop2=populacao2/area2;
-        pibpercapita2=pib2/populacao2;
+        denpop2=(float)populacao2/area2;
+        pibpercapita2=pib2/(float)populacao2;
 
     //Impressão das Cartas Escolhidas:
 
@@ -99,31 +100,32 @@ int main() {
 
     //Carta 1
 
-    printf ("Carta 1\n\n");
+    printf ("Carta 1:\n\n");
 
     printf ("Estado: %c\n", estado1);
-    printf ("Código da Carta: %s\n", codigodacarta1);
+    printf ("Codigo da Carta: %s\n", codigodacarta1);
     printf ("Cidade: %s\n", cidade1);
-    printf ("População: %d\n", populacao1);
-    printf ("Área: %.3f km²\n", area1);
-    printf ("PIB: %.3f bilhões de reais\n", pib1);
-    printf ("Número de Pontos Turísticos: %d\n", pontosturisticos1);
+    printf ("Populacao: %d\n", populacao1);
+    printf ("Area: %.3f km²\n", area1);
+    printf ("PIB: %.3f bilhoes de reais\n", pib1);
+    printf ("Numero de Pontos Turisticos: %d\n", pontosturisticos1);
     printf ("Desidade Populacional: %.2f hab/km²\n", denpop1);
     printf ("PIB per Capita: %.2f reais\n\n", pibpercapita1);
 
     //Carta 2
 
-    printf ("Carta 2\n\n");
+    printf ("Carta 2:\n\n");
 
     printf ("Estado: %c\n", estado2);
-    printf ("Código da Carta: %s\n", codigodacarta2);
+    printf ("Codigo da Carta: %s\n", codigodacarta2);
     printf ("Cidade: %s\n", cidade2);
-    printf ("População: %d\n", populacao2);
-    printf ("Área: %.3f km²\n", area2);
-    printf ("PIB: %.3f bilhões de reais\n", pib2);
-    printf ("Número de Pontos Turísticos: %d\n", pontosturisticos2);
+    printf ("Populacao: %d\n", populacao2);
+    printf ("Area: %.3f km²\n", area2);
+    printf ("PIB: %.3f bilhoes de reais\n", pib2);
+    printf ("Numero de Pontos Turisticos: %d\n", pontosturisticos2);
     printf ("Densidade Populacional: %.2f hab/km²\n", denpop2);
     printf ("PIB per Capita: %.2f reais\n\n", pib2);
 
-    return 0;
+		system("pause");
+    	return 0;
 }
