@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-// Desafio Cadastro das Cartas no Super Trunfo - Nível AVENTUREIRO
+// Desafio Cadastro das Cartas no Super Trunfo - Nível MESTRE
 
 int main() {
     
@@ -10,7 +10,7 @@ int main() {
     char estado1='a';
     char codigodacarta1[20]="aaa";
     char cidade1[20]="aaa";
-    int populacao1=0;
+    unsigned long int populacao1=0;
     float area1=0.0;
     float pib1=0.0;
     int pontosturisticos1=0;
@@ -22,7 +22,7 @@ int main() {
     char estado2='a';
     char codigodacarta2[20]="aaa";
     char cidade2[20]="aaa";
-    int populacao2=0;
+    unsigned long int populacao2=0;
     float area2=0.0;
     float pib2=0.0;
     int pontosturisticos2=0;
@@ -49,12 +49,12 @@ int main() {
     scanf ("%s", &cidade1);
 
     printf ("Insira a Populacao: ");
-    scanf ("%d", &populacao1);
+    scanf ("%lu", &populacao1);
 
     printf ("Insira a Area em Km2: ");
     scanf ("%f", &area1);
 
-    printf ("Insira o PIB: ");
+    printf ("Insira o PIB (em bilhões): ");
     scanf ("%f", &pib1);
 
     printf ("Insira a quantidade de Pontos Turisticos: ");
@@ -75,12 +75,12 @@ int main() {
     scanf ("%s", &cidade2);
 
     printf ("Insira a Populacao: ");
-    scanf ("%d", &populacao2);
+    scanf ("%lu", &populacao2);
 
     printf ("Insira a Area em Km2: ");
     scanf ("%f", &area2);
 
-    printf ("Insira o PIB: ");
+    printf ("Insira o PIB (em bilhões): ");
     scanf ("%f", &pib2);
 
     printf ("Insira a quantidade de Pontos Turisticos: ");
@@ -105,7 +105,7 @@ int main() {
     printf ("Estado: %c\n", estado1);
     printf ("Codigo da Carta: %s\n", codigodacarta1);
     printf ("Cidade: %s\n", cidade1);
-    printf ("Populacao: %d\n", populacao1);
+    printf ("Populacao: %lu\n", populacao1);
     printf ("Area: %.3f km²\n", area1);
     printf ("PIB: %.3f bilhoes de reais\n", pib1);
     printf ("Numero de Pontos Turisticos: %d\n", pontosturisticos1);
@@ -119,12 +119,51 @@ int main() {
     printf ("Estado: %c\n", estado2);
     printf ("Codigo da Carta: %s\n", codigodacarta2);
     printf ("Cidade: %s\n", cidade2);
-    printf ("Populacao: %d\n", populacao2);
+    printf ("Populacao: %lu\n", populacao2);
     printf ("Area: %.3f km²\n", area2);
     printf ("PIB: %.3f bilhoes de reais\n", pib2);
     printf ("Numero de Pontos Turisticos: %d\n", pontosturisticos2);
     printf ("Densidade Populacional: %.2f hab/km²\n", denpop2);
-    printf ("PIB per Capita: %.2f reais\n\n", pib2);
+    printf ("PIB per Capita: %.2f reais\n\n", pibpercapita2);
+
+    //Soma dos Atributos das Cartas - Cálculo do Super Poder
+
+    float superPoder1, superPoder2;
+
+    superPoder1 = 1/denpop1 + (float) populacao1 + area1 + pib1 + (float) pontosturisticos1 + pibpercapita1;
+    superPoder2 = 1/denpop2 + (float) populacao2 + area2 + pib2 + (float) pontosturisticos2 + pibpercapita2;
+
+    //Comparação das Cartas
+
+    int resultadoPopulacao;
+    int resultadoArea;
+    int resultadoPib;
+    int resultadoPontosTuristicos;
+    int resultadoDenpop;
+    int resultadoPibPerCapita;
+    int resultadoSuperPoder;
+
+    resultadoPopulacao = populacao1 > populacao2;
+    resultadoArea = area1 > area2;
+    resultadoPib = pib1 > pib2;
+    resultadoPontosTuristicos = pontosturisticos1 > pontosturisticos2;
+    resultadoDenpop = denpop1 < denpop2;
+    resultadoPibPerCapita = pibpercapita1 > pibpercapita2;
+    resultadoSuperPoder = superPoder1 > superPoder2;
+
+    //Impressão da Comparação das Cartas e a carta vencedora
+
+    printf ("Comparação de Cartas:\n");
+    printf ("1 - Carta 1 Vencedora\n");
+    printf ("0 - Carta 2 Vencedora\n\n");
+    printf ("População: %d\n", resultadoPopulacao);
+    printf ("Área: %d\n", resultadoArea);
+    printf ("PIB: %d\n", resultadoPib);
+    printf ("Pontos Turísticos: %d\n", resultadoPontosTuristicos);
+    printf ("Densidade Populacional: %d\n", resultadoDenpop);
+    printf ("PIB per Capita: %d\n", resultadoPibPerCapita);
+    printf ("Super Poder: %d\n\n", resultadoSuperPoder);
+
 
 		system("pause");
     	return 0;
