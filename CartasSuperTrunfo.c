@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-// Desafio Cadastro das Cartas no Super Trunfo - Nível MESTRE
+// Desafio Desenvolvendo a Lógica do Jogo Super Trunfo - Nível NOVATO
 
 int main() {
     
@@ -133,7 +133,7 @@ int main() {
     superPoder1 = 1/denpop1 + (float) populacao1 + area1 + pib1 + (float) pontosturisticos1 + pibpercapita1;
     superPoder2 = 1/denpop2 + (float) populacao2 + area2 + pib2 + (float) pontosturisticos2 + pibpercapita2;
 
-    //Comparação das Cartas
+    /* Comparação das Cartas (Cadastro das Cartas no Super Trunfo)
 
     int resultadoPopulacao;
     int resultadoArea;
@@ -162,7 +162,21 @@ int main() {
     printf ("Pontos Turísticos: %d\n", resultadoPontosTuristicos);
     printf ("Densidade Populacional: %d\n", resultadoDenpop);
     printf ("PIB per Capita: %d\n", resultadoPibPerCapita);
-    printf ("Super Poder: %d\n\n", resultadoSuperPoder);
+    printf ("Super Poder: %d\n\n", resultadoSuperPoder); */
+
+    //Comparação das Cartas
+
+    printf ("Comparação de Cartas (Atributo: Populacao):\n\n");
+    printf ("Carta 1 - %s (%c): %lu\n", cidade1, estado1, populacao1);
+    printf ("Carta 2 - %s (%c): %lu\n", cidade2, estado2, populacao2);
+
+    if (populacao1 > populacao2) {
+        printf ("Resultado: Carta 1 %s venceu\n\n", cidade1);
+
+    } else {
+        printf ("Resultado: Carta 2 %s venceu!\n\n", cidade2);
+    }
+
 
 
 		system("pause");
